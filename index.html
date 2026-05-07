@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>诡秘之主 · 序列人格测试</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 背景灰雾粒子层 -->
+  <div class="fog-layer">
+    <div class="fog fog1"></div>
+    <div class="fog fog2"></div>
+    <div class="fog fog3"></div>
+  </div>
+
+  <!-- 顶部小装饰 -->
+  <header class="top-bar">
+    <span class="brand">⛧ Lord of Mysteries · Sequence Test</span>
+    <span class="brand-zh">诡秘之主 · 序列人格测试</span>
+  </header>
+
+  <main id="app">
+
+    <!-- ===== 视图 1：介绍 ===== -->
+    <section id="view-intro" class="view active">
+      <div class="card intro-card">
+        <div class="emblem">⚜</div>
+        <h1>找到你灵魂深处的<br/><span class="accent">那一条途径</span></h1>
+        <p class="lead">
+          相传二十二条古老的途径在灰雾之中蜿蜒延伸，每一条都对应着一种独特的灵魂轨迹。<br/>
+          以下 <strong>48</strong> 道选择题，将引导你走过自己的内心，并在终点奉上属于你的<strong>序列归属</strong>。
+        </p>
+        <ul class="feature-list">
+          <li><span>🜂</span> 共 48 道题，每题四个选项，没有标准答案</li>
+          <li><span>🜁</span> 凭直觉作答，不要过度分析</li>
+          <li><span>🜃</span> 完成后将得到一份关于你与<strong>22 个序列</strong>之契合度的解读</li>
+        </ul>
+        <button id="btn-start" class="primary-btn">开启非凡之旅 ▸</button>
+        <p class="hint">大约需要 5–8 分钟 · 数据仅在本浏览器中处理，不会上传</p>
+      </div>
+    </section>
+
+    <!-- ===== 视图 2：答题 ===== -->
+    <section id="view-quiz" class="view">
+      <div class="quiz-header">
+        <div class="progress-info">
+          <span id="q-index">1</span> <span class="muted">/ 48</span>
+          <span class="muted q-label">道题</span>
+        </div>
+        <div class="progress-bar"><div id="progress-fill"></div></div>
+      </div>
+
+      <div class="card quiz-card" id="quiz-card">
+        <h2 id="q-title">…</h2>
+        <div id="q-options" class="options"></div>
+        <div class="quiz-foot">
+          <div class="quiz-foot-left">
+            <button id="btn-prev" class="ghost-btn" disabled>‹ 上一题</button>
+            <button id="btn-redo-prev" class="ghost-btn redo-btn" disabled title="返回上一题并清空原有作答">↺ 重答上一题</button>
+          </div>
+          <button id="btn-next" class="ghost-btn" disabled>下一题 ›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 视图 3：结果 ===== -->
+    <section id="view-result" class="view">
+      <div class="card result-card" id="result-card">
+        <p class="result-prefix">你的灵魂归属于</p>
+        <h1 class="result-name" id="result-name">—</h1>
+        <p class="result-alias" id="result-alias">—</p>
+        <p class="result-path" id="result-path">—</p>
+
+        <div class="seq-level" id="seq-level">
+          <span class="seq-level-num" id="seq-level-num">—</span>
+          <span class="seq-level-text">
+            <span class="seq-level-title" id="seq-level-title">—</span>
+            <span class="seq-level-desc" id="seq-level-desc">—</span>
+          </span>
+        </div>
+
+        <p class="rank-desc" id="rank-desc"></p>
+
+        <p class="result-motto" id="result-motto">—</p>
+
+        <div class="trait-row" id="trait-row"></div>
+
+        <h3 class="section-title">人格速写</h3>
+        <p class="result-summary" id="result-summary">—</p>
+
+        <h3 class="section-title">深度解读</h3>
+        <p class="result-analysis" id="result-analysis">—</p>
+
+        <div class="two-col">
+          <div>
+            <h3 class="section-title small">你的优势</h3>
+            <p id="result-strengths" class="muted-block">—</p>
+          </div>
+          <div>
+            <h3 class="section-title small">你的盲区</h3>
+            <p id="result-weaknesses" class="muted-block">—</p>
+          </div>
+        </div>
+
+        <h3 class="section-title">与序列的相关性</h3>
+        <p class="result-compat" id="result-compat">—</p>
+
+        <h3 class="section-title">其他灵魂亲缘 · Top 5</h3>
+        <div class="top5" id="top5-list"></div>
+
+        <div class="result-foot">
+          <button id="btn-restart" class="primary-btn">再走一遍灰雾 ↺</button>
+          <button id="btn-download" class="ghost-btn">⬇ 下载分享图</button>
+          <button id="btn-share" class="ghost-btn">复制结果文本</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">
+    本测试基于网络小说《诡秘之主》22 序列设定，仅供娱乐与自我探索 · 无任何官方关联
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

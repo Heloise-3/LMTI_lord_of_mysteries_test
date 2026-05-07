@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时
+node_modules/
+*.log
+.env
+.env.*
+
+# 项目内部使用的临时校验脚本
+_check.js
